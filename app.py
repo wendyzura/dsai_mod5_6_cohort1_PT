@@ -6,8 +6,6 @@ import os
 import sqlite3
 import datetime
 
-
-
 gemini_api_key = os.getenv("gemini_api_key")
 
 genai.configure(api_key=gemini_api_key)
@@ -18,6 +16,7 @@ first_time = 1
 @app.route("/",methods=["GET","POST"])
 def index():
     return(render_template("index.html"))
+
 @app.route("/main",methods=["GET","POST"])
 def main():
     global first_time
@@ -32,6 +31,13 @@ def main():
         c.close()
         conn.close()
         first_time=0
+
+    # def main():
+    # username = request.form.get('username', '')
+    # if username:
+    #     insert_user(username)
+    # return render_template('main.html')
+
     return(render_template("main.html"))
 
 @app.route("/gemini",methods=["GET","POST"])
@@ -66,7 +72,7 @@ def delete_log():
     c.execute("delete from users")
     conn.commit()
     c.close()
-    conn.close()
+    conn.close()    
     return(render_template("delete_log.html"))
 
 if __name__ == "__main__":
