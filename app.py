@@ -3,7 +3,7 @@ from flask import Flask,request,render_template
 import os
 import sqlite3
 import datetime
-os.environ["GOOGLE_API_KEY"] = "AIzaSyDkxn6-Gb73-_Gkvhyc6sImOumIJkATemY"
+#os.environ["GOOGLE_API_KEY"] = "AIzaSyDkxn6-Gb73-_Gkvhyc6sImOumIJkATemY"
 
 import google.generativeai as genai
 #genai.configure(api_key="AIzaSyB9szziVsPc8wEmYJoDOIifUC-vv_tj1Vw")
