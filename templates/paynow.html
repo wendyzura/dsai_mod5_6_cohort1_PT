@@ -25,7 +25,7 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/web3@1.5.2/dist/web3.min.js"></script>
     <script>
-        const contractAddress = "0x539574A36B9fd74dC19AEf3Eb955394dD14D1EE9";
+        const contractAddress = "0x77bdca76d31fae86aa62b79ac5bb33af5b1cf6ea";
         const contractABI = [
 	{
 		"inputs": [],
@@ -91,7 +91,7 @@
             const payee = document.getElementById("payee").value;
             const amount = document.getElementById("amount").value;
             console.log(payer,payee,amount);
-            await contract.method.weixin(payer,payee,amount).send({from:accounts[0]});
+            await contract.methods.weixin(payer,payee,amount).send({from:accounts[0]});
         }
 
         async function transaction() {
